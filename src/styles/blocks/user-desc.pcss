@@ -1,0 +1,86 @@
+.user-desc {
+    width: 970px;
+    display: flex;
+    justify-content: center;
+    line-height: 30px;
+    margin: 0 auto;
+
+    &__left {
+        display: flex;
+        flex-direction: column;
+        margin-right: 150px;
+    }
+
+    &__avatar {
+        width: 200px;
+        height: 200px;
+        margin-bottom: 80px;
+        margin-left: 70px;
+    }
+
+    &__photo {
+        display: block;
+        width: 100%;
+        border-radius: 50%;
+        box-shadow: 0 30px 80px rgba($text-color, .2);
+    }
+
+    &__bio {
+        display: flex;
+    }
+
+    &__labels {
+        margin-right: 80px;
+        opacity: .5;
+        font-weight: 600;
+    }
+
+    &__values {
+        font-weight: 600;
+
+    }
+
+    &__right {
+        color: $ text-color;
+        display: flex;
+        flex-direction: column;
+        font-weight: 600;
+    }
+
+    &__hello {
+        margin-bottom: 25px;
+        opacity: .5;
+    }
+
+    &__name {
+        font-size: 36px;
+        line-height: 48px;
+        font-weight: 700;
+        margin-bottom: 35px;
+    }
+
+    &__ilike {
+        opacity: .5;
+    }
+
+    &__about {
+        margin-bottom: 75px;
+
+    }
+
+    &__site {
+        opacity: .5;
+        font-style: italic;
+        font-weight: 400;
+        position: relative;
+        &::before{
+            content: '*';
+            color: $red-color;
+            font-size: 48px;
+            position: absolute;
+            left: -50px;
+            top: 10px;
+            opacity: .2;
+        }
+    }
+}

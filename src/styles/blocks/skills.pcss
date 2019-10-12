@@ -1,0 +1,28 @@
+.skills{
+    &__heading{
+        font-size: 24px;
+        font-weight: 700;
+        margin-bottom: 30px;
+    }
+    &__box{
+        margin-bottom: 50px;
+    }
+    &__list{
+        display: flex;
+    }
+    &__item{
+        position: relative;
+        &:not(:last-child){
+            margin-right: 50px;
+        }
+    }
+    &__name{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 18px;
+        font-weight: 700;
+        opacity: .5;
+    }
+}

@@ -1,15 +1,58 @@
-include ./mixins.pug
+include pug/mixins
 
 <!DOCTYPE html>
 html(lang="en")
-  head
-    meta(charset="UTF-8")
-    meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    meta(http-equiv="X-UA-Compatible", content="ie=edge")
-    title Portfolio | main page
-  body
-    .wrapper
-      .maincontent
-        +image('content/user.jpg', 'user-pic')
-        +icon('link', 'link-class')
-        .icon-bg
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        title Portfolio | main page
+    body
+        .wrapper
+            section.hero
+                .container
+                    header.hero__header
+                        .hero__logo
+                            .logo АН
+                        .hero__menu
+                            - let menu = ['Главная', 'Обо мне', 'Навыки', 'Работы', 'Отзывы', 'Связаться']
+                                ul.nav__list
+                                    each item in menu
+                                        li.nav__item
+                                            a(href='').nav__link #{item}
+                        .hero__links
+                            -
+                                let socials = [
+                                    {
+                                        icon: 'insta',
+                                        link: 'https://www.instagram.com/neveroffdesign/'
+                                    },
+                                    {
+                                        icon: 'vk',
+                                        link: 'https://vk.com/acefix'
+                                    },
+                                    {
+                                        icon: 'github',
+                                        link: 'https://github.com/NeveroffDev'
+                                    }
+                                ]
+                            ul.socials
+                                each item in socials
+                                    li.socials__item
+                                        a(href=#{item.link}).socials__link
+                                            +icon(`${item.icon}`, `socials__icon`)
+                        .hero__content
+                            .user-info
+                                .user-info__desc Личный сайт веб разработчика
+                                .user-info__username Антон Неверов
+
+                        .hero__btns
+                            .scroll-down-btns
+
+
+            include pug/section-first
+            include pug/section-skills
+
+                //+image('content/user.jpg', 'user-pic')
+                //+icon('link', 'link-class')
+                //.icon-bg
