@@ -1,0 +1,20 @@
+.slider-buttons__item{
+    width: 40px;
+    height: 40px;
+    background-color: $text-color;
+}
+.slider-buttons__icon{
+    width: 10px;
+    height: 10px;
+    fill: #fff;
+    opacity: 100;
+}
+.slider-buttons__item--prev .slider-buttons__icon{
+    transform: rotate(-90deg);
+}
+.slider-buttons__item--next .slider-buttons__icon{
+    transform: rotate(90deg);
+}
+.slider-buttons__item--disabled .slider-buttons__icon{
+    opacity: .3;
+}

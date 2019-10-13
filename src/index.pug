@@ -9,50 +9,245 @@ html(lang="en")
         title Portfolio | main page
     body
         .wrapper
-            section.hero
-                .container
-                    header.hero__header
-                        .hero__logo
-                            .logo АН
-                        .hero__menu
-                            - let menu = ['Главная', 'Обо мне', 'Навыки', 'Работы', 'Отзывы', 'Связаться']
-                                ul.nav__list
-                                    each item in menu
-                                        li.nav__item
-                                            a(href='').nav__link #{item}
-                        .hero__links
-                            -
-                                let socials = [
-                                    {
-                                        icon: 'insta',
-                                        link: 'https://www.instagram.com/neveroffdesign/'
-                                    },
-                                    {
-                                        icon: 'vk',
-                                        link: 'https://vk.com/acefix'
-                                    },
-                                    {
-                                        icon: 'github',
-                                        link: 'https://github.com/NeveroffDev'
-                                    }
-                                ]
-                            ul.socials
-                                each item in socials
-                                    li.socials__item
-                                        a(href=#{item.link}).socials__link
-                                            +icon(`${item.icon}`, `socials__icon`)
+            .welcome-section
+                section.hero
+                    .container.hero__container
+                        header.hero__header
+                            .hero__logo
+                                .logo АН
+
+                            .hero__menu
+                                nav.nav
+                                    - let menu = ['Главная', 'Обо мне', 'Навыки', 'Работы', 'Отзывы', 'Связаться']
+                                    ul.nav__list
+                                        each item in menu
+                                            li.nav__item
+                                                a(href='').nav__link #{item}
+
+                            .hero__links
+                                -
+                                    let socials = [
+                                        {
+                                            icon: 'insta',
+                                            link: 'https://www.instagram.com/neveroffdesign/'
+                                        },
+                                        {
+                                            icon: 'vk',
+                                            link: 'https://vk.com/acefix'
+                                        },
+                                        {
+                                            icon: 'github',
+                                            link: 'https://github.com/NeveroffDev'
+                                        }
+                                    ]
+                                ul.socials
+                                    each item in socials
+                                        li.socials__item
+                                            a(href=`${item.link}`).socials__link
+                                                +icon(`${item.icon}`, 'socials__icon')
                         .hero__content
                             .user-info
-                                .user-info__desc Личный сайт веб разработчика
+                                h1.user-info__desc Личный сайт веб разработчика
                                 .user-info__username Антон Неверов
 
                         .hero__btns
-                            .scroll-down-btns
+                            a(href='#').scroll-down-btns
+                                span Скролл
+                                +icon('scroll', 'scroll-down-btns__icon')
+
+                section.about
+                    .container.about__container
+                        .about__left
+                            .user
+                                .user__avatar.avatar
+                                    +image('content/user.jpg', 'avatar__pic')
+                                ul.user__desc
+                                    -
+                                        let user = [
+                                            ['Проживаю:', 'Якутия'],
+                                            ['Возраст:', '32 года'],
+                                            ['Родился:', '25 мая 2019']
+                                        ]
+                                    each item in user
+                                        li.user__desc-item
+                                            .user__key #{item[0]}
+                                            .user__value #{item[1]}
+
+                        .about__right
+                            h4.about__prologe Привет, меня зовут
+                            h2.about__title Антон Неверов
+                            .about__text Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+                            .about__ps Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+
+                .triangles
+                    svg(viewBox='0 0 1000 100' preserveAspectRatio='none').triangles__item
+                        polygon(points='0,0 0,100 1000,100')
+                    svg(viewBox='0 0 1000 100' preserveAspectRatio='none').triangles__item
+                        polygon(points='0,100 1000,100 1000,0')
 
 
-            include pug/section-first
-            include pug/section-skills
+            .values
+                .container.values__container
+                    .values__left
+                        +image('content/bagpack.png', 'values__image')
+                    .values__right
+                        .values__title
+                            h2.section-title.values__title-text Чем я могу быть вам полезен
+                            .values__desc
+                                p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+                        ul.skills
+                                        -
+                                            let skills = [
+                                                ['Front-end', [['HTML', 60],['CSS', 80],['JavaScript', 40],['Jquery и Vue.js', 34]]],
+                                                ['Workflow', [['GIT', 80], ['Terminal', 88], ['Gulp',80], ['Webpack',55]]]
+                                            ]
+                                        each item in skills
+                                            li.skills__item.skills-row
+                                                h3.skills-row__title #{item[0]}
+                                                ul.skills-row__list
+                                                    each skill in item[1]
+                                                        li.skills-row__item
+                                                            .skill
+                                                                .skill__title #{skill[0]}
+                                                                +skillRound(`${skill[1]}`).skill__shape
 
-                //+image('content/user.jpg', 'user-pic')
-                //+icon('link', 'link-class')
-                //.icon-bg
+            .works
+                .container.works__container
+                    .works__title
+                        h2.section-title Мои работы
+                    .works__wrapper
+                        .works__left
+                            .slider
+                                +image('content/slider-slide-1.jpg','slider__fullpic')
+                                .slider__preview
+                                    ul.previews
+                                        - for(let i=4; i>0; i--)
+                                            li.previews__item
+                                                a.preview__link
+                                                    +image(`${'content/'+i+'preview.jpg'}`,`${ i===1 ? 'preview__pic preview__pic--active' : 'preview__pic'}`)
+                                .slider__buttons
+                                        .slider-buttons
+                                            button.slider-buttons__item.slider-buttons__item--prev.slider-buttons__item--disabled
+                                                +icon('arrow-down','slider-buttons__icon')
+                                            button.slider-buttons__item.slider-buttons__item--next
+                                                +icon('arrow-down','slider-buttons__icon')
+                        .works__right
+                            .works__tags
+                                    -let tags = ['HTML', 'CSS', 'JavaScript']
+                                    ul.tags
+                                        each tag in tags
+                                            li.tags__item= tag
+                            .works__text
+                                h3.works__text-title Сайт школы образования
+                                .works__text-desc
+                                    p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+                                a(href='#').iconed-link.works__link
+                                    +icon('link', 'iconed-link__icon')
+                                    span.iconed-link__text Посмотреть сайт
+
+            .triangles.triangles--down
+                svg(viewBox='0 0 1000 100' preserveAspectRatio='none').triangles__item
+                    polygon(points='0,0 1000,0 1000,100')
+                svg(viewBox='0 0 1000 100' preserveAspectRatio='none').triangles__item
+                    polygon(points='0,100 0,0 1000,0')
+            .feedback-section
+                .triangles.triangles--down
+                    svg(viewBox='0 0 1000 100' preserveAspectRatio='none').triangles__item
+                        polygon(points='0,0 1000,0 1000,100')
+                    svg(viewBox='0 0 1000 100' preserveAspectRatio='none').triangles__item
+                        polygon(points='0,100 0,0 1000,0')
+                section.testimonials
+                    .container.testimonials-container
+                        .testimonials__up
+                            .testimonials__title
+                                h2.section-title.testimonials__title-text Что обо мне говорят
+                            .testimonials__buttons.test-btns
+                                button.test-btns__prev
+                                    +icon('arrow-down', 'test-btns__icon test-btns__icon--rotate')
+                                button.test-btns__next
+                                    +icon('arrow-down', 'test-btns__icon')
+                        .testimootials__down
+                            ul.testimonials__list
+                                li.testimonials__item.testimonial
+                                    .testimonial__left
+                                        +icon('quote', 'testimonial__icon')
+                                    .testimonisl__right
+                                        .testimonial__text
+                                            p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
+                                        .testimonial__user
+                                            .testimonial__photo
+                                                +image('content/test-ava-1.jpg', 'testimonial__pic')
+                                            .testimonial__author
+                                                .testimonial__name Ковальчук Дмитрий
+                                                .testimonial__position Основатель Loftschool
+                                li.testimonials__item.testimonial
+                                    .testimonial__left
+                                        +icon('quote', 'testimonial__icon')
+                                    .testimonisl__right
+                                        .testimonial__text
+                                            p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
+                                        .testimonial__user
+                                            .testimonial__photo
+                                                +image('content/test-ava-2.jpg', 'testimonial__pic')
+                                            .testimonial__author
+                                                .testimonial__name Владимир Сабанцев
+                                                .testimonial__position Преподаватель
+                section.contact
+                    .container.contact__container
+                        .contact__title
+                            h2.section-title.contact__title-text Связаться со мной
+                        form(method='POST').contact__form.message
+                            .message__row
+                                .message__input-box.input
+                                    label.input__label Введите ваше имя
+                                    .input__wrapper
+                                        +icon('user', 'input__icon')
+                                        input(type='text').input__input
+                                .message__input-box.input
+                                    label.input__label Введите ваш email
+                                    .input__wrapper
+                                        +icon('envelope', 'input__icon')
+                                        input(type='text').input__input
+                            .message__row
+                                .message__input-box.input
+                                    label.input__label Сообщение к письму
+                                    .input__wrapper
+                                        +icon('message', 'input__icon')
+                                        textarea().input__input
+
+                            .message__row
+                                .message__button
+                                    input(type='submit' value='Отправить').btn.btn--grad
+
+            footer.footer
+                .container.footer__container
+                    .footer__left
+                        .footer__copy
+                            .footer__copy-year &copy; 2019
+                            .footer__copy-info
+                                .footer__copy-name
+                                    p Антон
+                                    p Неверов
+                                .footer__copy-desc
+                                    p Личный сайт
+                                    p веб-разработчика
+                    .footer__right
+                        .footer__right-up
+                            .footer__nav
+                            nav.footer-nav
+                                ul.footer-nav__list
+                                    each item in menu
+                                        li.footer-nav__item
+                                            a(href='').footer-nav__link #{item}
+                        .footer__right-down
+                            .footer__about
+                                .footer__about-desc Этот сайт я сделал в рамках обучения в Школе онлайн образования Loftschool.
+                                ul.footer__about-socials.footer-socials
+                                    each item in socials
+                                        li.footer-socials__item
+                                            a(href=`${item.link}`).footer-socials__link
+                                                +icon(`${item.icon}`, 'footer-socials__icon')
+                            .footer__quote.quote
+                                .quote__text
+                                    p Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает где вы живете
+                                .quote__name Мартин Голдинг
