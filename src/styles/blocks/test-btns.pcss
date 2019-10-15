@@ -1,5 +1,4 @@
 .test-btns{
-
 }
 .test-btns__prev,
 .test-btns__next{
@@ -8,9 +7,21 @@
     border: 1px solid $text-color;
     border-radius: 50%;
     background: none;
+    outline: none;
+    transition: all .3s ease;
 }
 .test-btns__prev{
     margin-right: 30px;
+}
+.test-btns__prev:hover,
+.test-btns__next:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 5px 10px rgba(0,0,0, .2);
+}
+.test-btns__prev:active,
+.test-btns__next:active{
+    transform: translateY(1px);
+    box-shadow: 0 0 5px rgba(0,0,0, .2);
 }
 .test-btns__icon{
     width: 10px;
