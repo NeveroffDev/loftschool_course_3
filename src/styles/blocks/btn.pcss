@@ -1,13 +1,33 @@
-.btn{
+.btn {
     padding: 30px 100px;
     outline: none;
     border: none;
-    border-radius: 40px 5px 40px 5px ;
+    border-radius: 40px 5px 40px 5px;
     color: #fff;
     font-weight: 700;
     text-transform: uppercase;
     cursor: pointer;
 }
-.btn--grad{
-    background: linear-gradient(to left, $grad-color-1, $grad-color-2);
+
+
+.btn--grad {
+    background: linear-gradient(to left, $grad-color-1, $grad-color-2, $grad-color-1);
+    background-size: 200% 200%;
+    box-shadow: 0 0 5px rgba($grad-color-1, .3);
+    transition: all .4s ease;
+
+}
+
+.btn--grad:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba($grad-color-1, .5);
+    animation: gradient 1s ease;
+    background-position: 100% 50%;
+//background: linear-gradient(to left, $grad-color-2, $grad-color-1);
+
+}
+
+.btn--grad:active {
+    transform: translateY(1px);
+    box-shadow: 0 0 0 rgba($grad-color-1, .5);
 }

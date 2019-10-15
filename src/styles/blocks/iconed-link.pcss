@@ -1,9 +1,21 @@
 .iconed-link{
     color: $link-color;
+    transition: color .3s ease;
+    @include linkHover(currentColor);
+
 }
+
+.iconed-link:hover .iconed-link__icon{
+    animation: rotate 1.5s infinite;
+
+}
+
+
 .iconed-link__text{
     font-weight: 700;
     font-size: 18px;
+
+
 }
 .iconed-link__icon{
     margin-right: 15px;
@@ -11,3 +23,4 @@
     height: 15px;
     fill: currentColor;
 }
+

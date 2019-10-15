@@ -2,13 +2,28 @@
     display: flex;
     align-items: center;
 }
+.socials__item{
+    will-change: transform;
+    backface-visibility: hidden;
+    transition: transform .3s cubic-bezier(.31,-0.52,.73,1.62);
+
+}
+
+.socials__item:hover{
+    transform: scale(1.25);
+}
 
 .socials__item:not(:last-child){
     margin-right: 40px;
+
 }
+
+
 
 .socials__icon{
     width: 25px;
     height: 25px;
     fill: currentColor;
+
 }
+

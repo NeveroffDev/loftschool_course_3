@@ -1,6 +1,6 @@
 .footer-socials{
     display: flex;
-    opacity: .3;
+
 }
 .footer-socials__item:not(:last-child){
     margin-right: 20px;
@@ -13,9 +13,19 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    opacity: .3;
+    transition: opacity .3s ease;
+}
+.footer-socials__link:hover{
+    opacity: .8;
+}
+.footer-socials__link:hover .footer-socials__icon{
+    transform: scale(1.25);
 }
 .footer-socials__icon{
     width: 20px;
     height: 20px;
     fill: currentColor;
+    transition: transform .3s cubic-bezier(.31,-0.52,.73,1.62);
 }
+
