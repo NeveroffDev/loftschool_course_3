@@ -4,6 +4,9 @@
 }
 .nav__item:not(:last-child){
     margin-right: 30px;
+    @include desktop{
+        margin-right: 60px;
+    }
 }
 .nav__item{
     @include linkHover(currentColor);

@@ -19,15 +19,21 @@
     position: relative;
 }
 .works__text:before{
-    content: '4';
+    content: '2';
     color: $gray-color;
     position: absolute;
-    bottom: 0;
+    top: -100px;
     left: -230px;
     font-size: 400px;
     line-height: 320px;
     font-weight: 800;
     z-index: -1;
+    @include desktop{
+        font-size: 300px;
+        left: -165px;
+        top: -135px;
+    }
+
 }
 .works__tags{
     margin-bottom: 30px;

@@ -11,6 +11,9 @@
 }
 .footer__copy{
     display: flex;
+    @include desktop{
+        flex-direction: column;
+    }
 }
 .footer__copy-year{
     opacity: .1;
@@ -19,6 +22,9 @@
     line-height: 48px;
     margin-right: 50px;
     white-space: nowrap;
+    @include desktop{
+        margin-bottom: 25px;
+    }
 }
 .footer__copy-name{
     font-weight: 700;
