@@ -1,13 +1,47 @@
 .slider{
     position: relative;
+    @include tablets{
+        margin-right: 10%;
+    }
+    @include phones{
+        margin-right: 0;
+    }
+}
+.slider:after{
+    content: '2';
+    color: $gray-color;
+    position: absolute;
+    top: -25px;
+    right: -130px;
+    font-size: 400px;
+    line-height: 320px;
+    font-weight: 800;
+    z-index: -1;
+    @include desktop{
+        font-size: 300px;
+        top: -55px;
+        right: -130px;
+    }
+    @include phones{
+        display: none;
+    }
+}
+.slider__fullpic{
+
 }
 .slider__preview{
     position: absolute;
     bottom: 0;
     right: 0;
     width: 18%;
+    @include phones{
+        display: none;
+    }
 }
 .slider__buttons{
     position: absolute;
     right: 0;
+    @include phones{
+        bottom: 0;
+    }
 }

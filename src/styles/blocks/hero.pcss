@@ -13,10 +13,32 @@
     align-items: center;
     justify-content: space-between;
     padding-top: 40px;
+    @include tablets{
+        padding-top: 60px;
+        justify-content: flex-end;
+    }
+    @include mediaFix(400px){
+        justify-content: space-between;
+    }
 }
 
 .hero__menu{
     margin: 0 20px;
+    @include tablets{
+        order: 2;
+    }
+}
+.hero__links{
+    @include tablets{
+        margin-right: 90px;
+        margin-left: auto;
+    }
+    @include mediaFix(480px){
+        margin-right: auto;
+    }
+    @include mediaFix(400px){
+        display: none;
+    }
 }
 
 .hero__content{
@@ -30,4 +52,7 @@
     display: flex;
     justify-content: center;
     padding: 50px 0;
+    @include tablets{
+        display: none;
+    }
 }

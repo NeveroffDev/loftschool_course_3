@@ -19,6 +19,9 @@ html(lang="en")
                             .hero__menu
                                 nav.nav
                                     - let menu = ['Главная', 'Обо мне', 'Навыки', 'Работы', 'Отзывы', 'Связаться']
+                                    .nav__burger
+                                        a(href='#').nav__burger-link
+                                            .nav__burger-icon
                                     ul.nav__list
                                         each item in menu
                                             li.nav__item

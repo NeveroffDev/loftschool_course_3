@@ -2,11 +2,17 @@
 }
 .footer-nav__list{
     display: flex;
+    flex-wrap: wrap;
+    margin-top: -30px;
+    //justify-content: space-between;
+
 }
 .footer-nav__item:not(:last-child){
-    margin-right: 60px;
+    //margin-right: 60px;
 }
 
 .footer-nav__item{
     @include linkHover(currentColor);
+    margin-top: 30px;
+    flex-basis: 120px;
 }

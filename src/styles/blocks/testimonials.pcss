@@ -1,17 +1,41 @@
 .testimonials{
     padding-top: 150px;
+    @include mediaFix(600px){
+        padding-top: 100px;
+    }
 }
 .testimonials__up{
     display: flex;
     align-items: center;
     margin-bottom: 100px;
+    @include mediaFix(600px){
+        flex-direction: column;
+        margin-bottom: 50px;
+    }
+
 }
 .testimonials__title{
     margin-right: 120px;
+    @include tablets{
+        margin-right: 60px;
+    }
+    @include mediaFix(600px){
+        margin-right: 0;
+        margin-bottom: 30px;
+    }
 }
 .testimonials__list{
     display: flex;
+    overflow: hidden;
 }
 .testimonials__item:not(:last-child){
     margin-right: 70px;
+    @include tablets{
+        margin-right: 50px;
+    }
+    @include mediaFix(600px){
+        margin-right: 0;
+    }
+
+
 }

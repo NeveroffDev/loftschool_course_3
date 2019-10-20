@@ -1,13 +1,51 @@
 .nav__list{
     display: flex;
     align-items: center;
+    @include tablets {
+        display: none;
+    }
 }
 .nav__item:not(:last-child){
     margin-right: 30px;
     @include desktop{
         margin-right: 60px;
     }
+    @include mediaFix(1050px){
+        margin-right: 30px;
+    }
+    @include mediaFix(850px){
+        margin-right: 20px;
+    }
 }
+
 .nav__item{
     @include linkHover(currentColor);
+}
+.nav__burger{
+    position: relative;
+    display: none;
+    @include tablets {
+        display: block;
+    }
+}
+.nav__burger-icon,
+.nav__burger-icon:before,
+.nav__burger-icon:after{
+    width: 30px;
+    height: 5px;
+    background-color: $text-color;
+    border-radius: 2px;
+}
+.nav__burger-icon:before,
+.nav__burger-icon:after{
+    content: '';
+    position: absolute;
+    left: 0;
+}
+
+.nav__burger-icon:before{
+    top: -10px;
+}
+.nav__burger-icon:after{
+    top: 10px;
 }

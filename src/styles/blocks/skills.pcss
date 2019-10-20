@@ -1,7 +1,13 @@
 .skills{
     padding-left: 120px;
+    @include tablets{
+        padding-left: 0;
+        margin-bottom: 120px;
+    }
+    @include mediaFix(560px){
+        margin-bottom: 50px;
+    }
 }
 .skills-row__list{
     display: flex;
-
 }

@@ -5,9 +5,19 @@
 .footer__container{
     padding: 100px 0;
     display: flex;
+    @include tablets{
+        padding: 60px 0;
+    }
+    @include mediaFix(600px){
+        flex-direction: column;
+    }
+
 }
 .footer__left{
     margin-right: 100px;
+    @include mediaFix(600px){
+        margin-bottom: 50px;
+    }
 }
 .footer__copy{
     display: flex;
@@ -30,11 +40,34 @@
     font-weight: 700;
     font-size: 18px;
     margin-bottom: 20px;
+    @include mediaFix(600px){
+        margin-bottom: 10px;
+    }
+
+}
+.footer__copy-name p{
+    @include mediaFix(600px){
+        display: inline-block;
+        text-transform: uppercase;
+        &:first-child{
+            margin-right: 5px;
+        }
+    }
+
 }
 .footer__copy-desc{
     opacity: .15;
     white-space: nowrap;
 }
+.footer__copy-desc p{
+    @include mediaFix(600px){
+        display: inline-block;
+        &:first-child{
+            margin-right: 5px;
+        }
+    }
+}
+
 .footer__right-up{
     margin-bottom: 50px;
 }
@@ -46,11 +79,21 @@
 .footer__right-down{
     display: flex;
     justify-content: space-between;
+    @include mediaFix(820px){
+        flex-direction: column;
+    }
 }
 .footer__about{
     width: 40%;
+    @include mediaFix(820px){
+        width: 100%;
+        margin-bottom: 50px;
+    }
 
 }
 .footer__quote{
     width: 50%;
+    @include mediaFix(820px){
+        width: 100%;
+    }
 }

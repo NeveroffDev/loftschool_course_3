@@ -3,35 +3,92 @@
     display: flex;
     align-items: flex-end;
     position: relative;
+    @include tablets{
+        flex-direction: column;
+        align-items: center;
+        padding-top: 120px;
+    }
+    @include mediaFix(560px){
+        padding-top: 80px;
+    }
+
+
+
 
 }
 .values__left{
-        width: 25%;
+    width: 25%;
+    @include tablets{
+        width: 100%;
+        order: 2;
+    }
+
 
 }
 .values__image{
         position: absolute;
         left: -280px;
         bottom: 0;
+    @include mediaFix(1000px){
+        left: -360px;
+    }
+    @include mediaFix(900px){
+        width: 80%;
+    }
+    @include tablets{
+        position: initial;
+        left: 0;
+        width: 50%;
+        margin: 0 auto;
+
+    }
+    @include mediaFix(560px){
+        width: 100%;
+    }
 
 }
 .values__right{
     display: flex;
     flex-direction: column;
     align-items: center;
+    @include tablets{
+        width: 100%;
+    }
+
 
 }
 
 .values__title{
     margin-bottom: 80px;
     max-width: 600px;
+    @include tablets{
+        text-align: center;
+    }
 }
 .values__title-text{
     font-size: 30px;
     margin-bottom: 40px;
+    @include tablets{
+        width: 45%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    @include mediaFix(560px){
+        width: 100%;
+        text-align: left;
+    }
 }
 .values__desc{
     font-weight: 600;
     line-height: 30px;
     opacity: .5;
+    @include tablets{
+        width: 85%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    @include mediaFix(560px){
+        width: 100%;
+        text-align: left;
+    }
 }

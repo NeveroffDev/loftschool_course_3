@@ -7,6 +7,12 @@
     opacity: .5;
     display: block;
     margin-bottom: 15px;
+    @include mediaFix(670px){
+        text-align: center;
+    }
+    @include phones {
+        padding-left: 00;
+    }
 }
 
 .input__icon{
@@ -15,6 +21,9 @@
     fill: currentColor;
     opacity: .3;
     margin-right: 10px;
+    @include phones{
+        display: none;
+    }
 }
 .input__wrapper{
     display: flex;

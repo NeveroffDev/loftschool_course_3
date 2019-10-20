@@ -1,6 +1,12 @@
 .message__row{
     display: flex;
     width: 60%;
+    @include tablets{
+        width: 100%;
+    }
+    @include mediaFix(670px){
+        flex-direction: column;
+    }
 
 }
 .message__row:not(:last-child){
@@ -12,4 +18,16 @@
 }
 .message__input-box:not(:last-child){
     margin-right: 60px;
+    @include mediaFix(670px){
+        margin-right: 0;
+        margin-bottom: 30px;
+    }
+}
+.message__button{
+    @include tablets{
+        margin: 0 auto;
+    }
+    @include phones{
+        width: 100%;
+    }
 }

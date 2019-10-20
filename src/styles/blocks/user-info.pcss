@@ -7,6 +7,10 @@
         flex-direction: row;
         align-items: flex-start;
     }
+    @include tablets{
+        flex-direction: column;
+        align-items: center;
+    }
 }
 .user-info__desc{
     font-size: 18px;
@@ -18,6 +22,16 @@
         text-align: right;
         margin-right: 60px;
     }
+    @include tablets{
+        text-align: center;
+        margin-right: 0;
+        margin-bottom: 30px;
+    }
+    @include phones{
+        font-size: 14px;
+        line-height: 24px;
+        margin-bottom: 10px;
+    }
 }
 .user-info__username{
     width: 420px;
@@ -26,5 +40,12 @@
     font-weight: 800;
     @include desktop{
         text-align: left;
+    }
+    @include tablets{
+        text-align: center;
+    }
+    @include phones{
+        font-size: 36px;
+        line-height: 48px;
     }
 }

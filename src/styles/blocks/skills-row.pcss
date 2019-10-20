@@ -5,4 +5,23 @@
     font-size: 24px;
     font-weight: 700;
     margin-bottom: 40px;
+    @include tablets{
+        text-align: center;
+    }
+}
+
+.skills-row__list{
+    display: flex;
+    @include mediaFix(600px){
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: -30px;
+    }
+
+}
+.skills-row__item{
+    @include mediaFix(600px){
+        width: 50%;
+        margin-top: 30px;
+    }
 }

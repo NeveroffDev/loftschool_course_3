@@ -7,6 +7,9 @@
 .user__avatar{
     margin-bottom: 70px;
     box-shadow: 0 20px 30px rgba(0,0,0,.1);
+    @include mediaFix(500px){
+        margin-bottom: 20px;
+    }
 }
 .user__desc{
     width: 100%;
@@ -19,6 +22,9 @@
 .user__value{
     width: 50%;
     margin-bottom: 15px;
+    @include mediaFix(500px){
+        margin-bottom: 5px;
+    }
 }
 .user__key{
     opacity: .3;
